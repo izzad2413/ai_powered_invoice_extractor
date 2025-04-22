@@ -9,7 +9,7 @@ load_dotenv() # load all the env variables from .env
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 # function to load Gemini Pro Vision
-model = genai.GenerativeModel("gemini-pro-vision")
+model = genai.GenerativeModel("gemini-1.5-flash")
 
 def get_gemini_response(input, image, prompt):
     response = model.generate_content([input, image[0], prompt])
@@ -31,21 +31,21 @@ def input_image_details(uploaded_file):
     
 
 # init streamlit page
-st.set_page_config(page_title="AI-Powered Multilanguage Invoice Extractor")
+st.set_page_config(page_title="AI-Powered Invoice Extractor")
 
-st.header("AI-Powered Multilanguage Invoice Extractor")
+st.header("AI-Powered Invoice Extractor")
 input = st.text_input("Input Prompt: ", key="input")
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 image = ""
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
-    st.image(image, caption="uploaded Image.", use_column_width=True)
+    st.image(image, caption="uploaded Image.", use_container_width=True)
     
 submit=st.button("Tell me about the invoice")
 
 input_prompt ="""
 You are en expert in understanding invoices. We will upload an image as invoice and 
-you will have to answer any questions based on the uploaded invoice image
+you will have to answer any questions based on the uploaded invoice image.
 """
 
 if submit:
