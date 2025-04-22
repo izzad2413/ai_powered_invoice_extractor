@@ -23,6 +23,6 @@ This is an example of AI powered solution to extract information from an invoice
 
 ## How to Use
 
-To test the application, click this link: [AI-Powered Invoice Extractor](https://exceldatasetpreprocess-zadataintelligence.streamlit.app/)
+To test the application, click this link: [AI-Powered Invoice Extractor](https://ai-powered-invoice-extractor-zadata-intelligence.streamlit.app/)
 
 ![Image](https://github.com/user-attachments/assets/05ef33e7-7b65-418f-acb8-0f39949f0097)
