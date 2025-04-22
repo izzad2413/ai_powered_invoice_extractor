@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 import streamlit as st
 import os
-from PIL import image
+from PIL import Image
 import google.generativeai as genai
 
 
@@ -31,14 +31,14 @@ def input_image_details(uploaded_file):
     
 
 # init streamlit page
-st.set_page_config(page_title="Multilanguage Invoice Extractor")
+st.set_page_config(page_title="AI-Powered Multilanguage Invoice Extractor")
 
-st.header("Multilanguage Invoice Extractor")
+st.header("AI-Powered Multilanguage Invoice Extractor")
 input = st.text_input("Input Prompt: ", key="input")
 uploaded_file = st.file_uploader("Choose an image/file of the invoice", type=["jpg", "png", "pdf"])
 image = ""
 if uploaded_file is not None:
-    image = image.open(uploaded_file)
+    image = Image.open(uploaded_file)
     st.image(image, caption="uploaded Image.", use_column_width=True)
     
 submit=st.button("Tell me about the invoice")
