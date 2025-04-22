@@ -35,7 +35,7 @@ st.set_page_config(page_title="AI-Powered Multilanguage Invoice Extractor")
 
 st.header("AI-Powered Multilanguage Invoice Extractor")
 input = st.text_input("Input Prompt: ", key="input")
-uploaded_file = st.file_uploader("Choose an image/file of the invoice", type=["jpg", "png", "pdf"])
+uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
 image = ""
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
